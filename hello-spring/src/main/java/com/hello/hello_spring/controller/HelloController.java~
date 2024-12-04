@@ -23,11 +23,11 @@ public class HelloController {
     @GetMapping("hello-string")
     @ResponseBody // HTTP 응답 Body 부에 직접 넣어주겠다.
     public String helloString(@RequestParam("name") String name) {
-        return "hello " + name; // hellp XXXX 하고 그냥 글씨가 출력된다. 그런데 만약 객체를 반환하면 어떻게될까?
+        return "hello " + name;
     }
 
     @GetMapping("hello-api")
-    @ResponseBody // 객체를 생성해서 넣어주겠다.
+    @ResponseBody
     public Hello helloApi(@RequestParam("name") String name){
         Hello hello = new Hello();
         hello.setName(name);
@@ -38,7 +38,7 @@ public class HelloController {
     static class Hello{
         private String name;
         private int age;
-
+                
         public int getAge() {
             return age;
         }
