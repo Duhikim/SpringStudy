@@ -9,7 +9,11 @@ import java.util.Optional;
 
 public class MemberService {
 
-	private final MemberRepository memberRepository = new MemoryMemberRepository();
+	private final MemberRepository memberRepository; // 객체생성 안하지? 이런걸 디펜던시 인젝션 이라고 함.DI
+
+	public MemberService(MemberRepository memberRepository) {
+		this.memberRepository = memberRepository;
+	}
 
 	//회원 가입
 	public Long join(Member member){
