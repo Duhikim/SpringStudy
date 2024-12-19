@@ -67,7 +67,7 @@ public class JdbcMemberRepository implements MemberRepository{
 			rs = pstmt.executeQuery();
 
 			if(rs.next()){
-				Member member = new Member();
+				Member member = new Member(0);
 				member.setId(rs.getLong("id"));
 				member.setName(rs.getString("name"));
 				return Optional.of(member);

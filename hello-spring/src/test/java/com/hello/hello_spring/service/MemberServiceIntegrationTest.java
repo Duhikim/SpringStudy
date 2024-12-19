@@ -1,6 +1,7 @@
 package com.hello.hello_spring.service;
 
 import com.hello.hello_spring.domain.Member;
+import com.hello.hello_spring.repository.MemberRepository;
 import com.hello.hello_spring.repository.MemoryMemberRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,13 +14,13 @@ import org.springframework.transaction.annotation.Transactional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 @SpringBootTest
-//@Transactional
+@Transactional
 class MemberServiceIntegrationTest {
 
 	@Autowired
 	MemberService memberService;
 	@Autowired
-	MemoryMemberRepository memberRepository;
+	MemberRepository memberRepository;
 
 	@Test
 	void 회원가입() { // 테스트 코드는 한글로도 많이 작성한다.
@@ -49,12 +50,6 @@ class MemberServiceIntegrationTest {
 
 		assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
 
-//		try {
-//			memberService.join(member2);
-//
-//		} catch(IllegalStateException e){
-//			assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
-//		}
 		//then
 	}
 
