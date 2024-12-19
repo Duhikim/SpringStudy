@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.transaction.BeforeTransaction;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +23,7 @@ class MemberServiceIntegrationTest {
 	@Autowired
 	MemberRepository memberRepository;
 
+
 	@Test
 	void 회원가입() { // 테스트 코드는 한글로도 많이 작성한다.
 		//given
@@ -35,6 +37,7 @@ class MemberServiceIntegrationTest {
 		Member findMember = memberService.findOne(saveId).get();
 		assertThat(member.getName()).isEqualTo(findMember.getName());
 	}
+
 
 	@Test
 	public void 중복_회원_예외(){
