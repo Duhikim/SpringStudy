@@ -2,14 +2,12 @@ package com.hello.hello_spring.service;
 
 import com.hello.hello_spring.domain.Member;
 import com.hello.hello_spring.repository.MemberRepository;
-import com.hello.hello_spring.repository.MemoryMemberRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Transactional
 public class MemberService {
 
 	private final MemberRepository memberRepository; // 객체생성 안하지? 이런걸 디펜던시 인젝션 이라고 함.DI
