@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.goorm.mybatis.mapper.BoardMapper">
+
+    <!-- SELECT -->
+    <select id="selectAll" resultType="io.goorm.mybatis.board.model.Board">
+        SELECT * FROM board
+        ORDER BY seq desc
+    </select>
+
+    <select id="selectById" parameterType="long" resultType="io.goorm.mybatis.board.model.Board">
+        SELECT * FROM board WHERE seq = #{seq}
+    </select>
+
+    <!-- INSERT -->
+    <insert id="insert" parameterType="io.goorm.mybatis.board.model.Board">
+        INSERT INTO board (title, contents, reg_user)
+        VALUES (#{board.title}, #{board.contents}, #{board.regUser})
+    </insert>
+
+    <!-- UPDATE -->
+    <update id="update" parameterType="io.goorm.mybatis.board.model.Board">
+        UPDATE board
+        SET title = #{board.title}, contents = #{board.contents}
+        WHERE seq = #{board.seq}
+    </update>
+
+    <!-- DELETE -->
+    <delete id="delete" parameterType="long">
+        DELETE FROM board WHERE seq = #{seq}
+    </delete>
+
+</mapper>

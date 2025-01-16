@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script defer type="text/javascript" src="/ajax/js/list.js"></script>
+    <link rel="stylesheet" href="/ajax/css/bootstrap.css" type="text/css"/>
+
+    <title>ajax controller</title>
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        .starter-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="starter-template">
+<h2>게시글 목록</h2>
+<table class="table table-bordered" id="listTable">
+    <colgroup>
+        <col width="10%"/>
+        <col width="25%"/>
+        <col width="10%"/>
+        <col width="10%"/>
+    </colgroup>
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>등록자</th>
+        <th>등록일</th>
+    <tr>
+    </thead>
+    <tbody>
+    <!-- 게시글 반복 -->
+    <tr>
+        <td>1</td>
+        <td><a href="/view?seq=1"> 홈페이지를 오픈했습니다.</a></td>
+        <td>2024.03.04</td>
+        <td>2</td>
+    </tr>
+    <!-- 게시글 반복 -->
+    </tbody>
+    </table>
+
+
+<div class="pull-right">
+    <button class="btn btn-primary" onclick="location.href='/write'">등록</button>
+</div>
+    </div>
+</div>
+
+<footer class="d-flex justify-content-center navbar-fixed-bottom">
+    <span>copyright 2024 topolo All right reserved</span>
+</footer>
+
+</body>
+</html>

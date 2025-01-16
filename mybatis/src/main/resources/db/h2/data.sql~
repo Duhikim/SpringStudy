@@ -1,0 +1,2 @@
+insert into BOARD(title, contents, reg_user)
+value ('테스트', '테스트', 'admin');

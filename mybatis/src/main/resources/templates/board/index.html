@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메인 페이지</title>
+  <link rel="stylesheet" th:href="@{/board/css/styles.css}">
+</head>
+<body>
+<!-- 메뉴 영역 -->
+<header>
+  <nav>
+    <ul>
+      <li><a th:href="@{/}">홈</a></li>
+      <li><a th:href="@{/board/boards}">게시판</a></li>
+    </ul>
+  </nav>
+</header>
+<!-- 메뉴 영역 끝 -->
+
+<!-- 메인 컨텐츠 영역 -->
+<main>
+  <h1>메인페이지입니다.</h1>
+</main>
+<!-- 메인 컨텐츠 영역 끝 -->
+
+<!-- 푸터 영역 -->
+<footer>
+  <p>라이센스</p>
+</footer>
+<!-- 푸터 영역 끝 -->
+</body>
+</html>

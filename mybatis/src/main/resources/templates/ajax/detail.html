@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script defer type="text/javascript" src="/ajax/js/view.js"></script>
+    <link rel="stylesheet" href="/ajax/css/bootstrap.css" type="text/css"/>
+
+    <title>ajax controller</title>
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        .starter-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="starter-template">
+<h2>게시글 정보</h2>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th colspan="2">
+            <div class="row">
+                <div class="col-md-6"><span id="title">제목자리</span></div>
+                <div class="col-md-2">
+                    <span id="user">등록자자리</span>
+                </div>
+                <div class="col-md-4">
+                    <span id="date">2024-03-05</span>
+                </div>
+            </div>
+
+        </th>
+    <tr>
+    <tr>
+        <td colspan="2" class="">
+            <p id="contents"></p>
+        </td>
+    </tr>
+    </thead>
+</table>
+
+<button class="btn btn-default" id="listBtn">목록</button>
+<button class="btn btn-primary" id="updateBtn">수정</button>
+<button class="btn btn-danger"  id="deleteBtn">삭제</button>
+
+    </div>
+</div>
+
+<footer class="d-flex justify-content-center navbar-fixed-bottom">
+    <span>copyright 2024 topolo All right reserved</span>
+</footer>
+
+</body>
+</html>

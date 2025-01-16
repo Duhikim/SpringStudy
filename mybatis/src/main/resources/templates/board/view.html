@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 상세보기</title>
+    <link rel="stylesheet" th:href="@{/board/css/styles.css}">
+    <script th:src="@{/board/js/view.js}" defer></script>
+</head>
+<body>
+<!-- 메뉴 영역 -->
+<header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">홈</a></li>
+            <li><a th:href="@{/board/boards}">게시판</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- 메뉴 영역 끝 -->
+
+<!-- 메인 컨텐츠 영역 -->
+<main>
+    <h1>게시글 상세보기</h1>
+    <table class="table-container">
+        <tr>
+            <th>제목</th>
+            <td th:text="${post.title}">게시글 제목</td>
+        </tr>
+        <tr>
+            <th>내용</th>
+            <td th:text="${post.contents}">게시글 내용</td>
+        </tr>
+        <tr>
+            <th>등록자</th>
+            <td th:text="${post.regUser}">등록자</td>
+        </tr>
+        <tr>
+            <th>등록일</th>
+            <td th:text="${post.regDate}">등록일</td>
+        </tr>
+    </table>
+    <div class="button-container">
+
+    <button th:onclick="|location.href='@{/board/boards}'|">리스트</button>
+    <button th:onclick="|location.href='@{/board/boards/update/{seq}(seq=${post.seq})}'|">수정</button>
+
+    <button type="button"
+            th:onclick="|deletePost(${post.seq})|">
+        삭제
+    </button>
+    </div>
+</main>
+<!-- 메인 컨텐츠 영역 끝 -->
+
+<!-- 푸터 영역 -->
+<footer>
+    <p>라이센스</p>
+</footer>
+<!-- 푸터 영역 끝 -->
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 리스트</title>
+    <link rel="stylesheet" th:href="@{/board/css/styles.css}">
+</head>
+<body>
+<!-- 메뉴 영역 -->
+<header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">홈</a></li>
+            <li><a th:href="@{/board/boards}">게시판</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- 메뉴 영역 끝 -->
+
+<!-- 메인 컨텐츠 영역 -->
+<main>
+    <h1>게시판 리스트</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>등록자</th>
+            <th>등록일자</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="post : ${posts}">
+            <td th:text="${post.seq}">1</td>
+            <td><a th:href="@{/board/boards/{seq}(seq=${post.seq})}" th:text="${post.title}">게시글 제목</a></td>
+            <td th:text="${post.contents}">게시글 내용</td>
+            <td th:text="${post.regUser}">등록자</td>
+            <td>2024-01-01 12:00</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="button-container">
+    <button th:onclick="|location.href='@{/board/boards/create}'|">등록</button>
+    </div>
+</main>
+<!-- 메인 컨텐츠 영역 끝 -->
+
+<!-- 푸터 영역 -->
+<footer>
+    <p>라이센스</p>
+</footer>
+<!-- 푸터 영역 끝 -->
+</body>
+</html>

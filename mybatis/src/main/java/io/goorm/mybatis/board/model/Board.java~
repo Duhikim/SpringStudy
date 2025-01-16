@@ -1,0 +1,13 @@
+package io.goorm.mybatis.board.model;
+
+public class Board {
+
+	private Long seq;
+	private String title;
+
+	private String contents;
+
+	private String regUser;
+
+	
+}

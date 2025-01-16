@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script defer type="text/javascript" src="/ajax/js/write.js"></script>
+    <link rel="stylesheet" href="/ajax/css/bootstrap.css" type="text/css"/>
+
+    <title>ajax controller</title>
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        .starter-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="starter-template">
+<h2>게시글 정보 작성</h2>
+
+<form id="frm" name="frm" method="POST">
+    <input type="hidden" id="reguser" name="reguser" value="admin"/>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>
+                title
+            </th>
+            <td>
+                <input type="text" id="title" name="title" value="" class="form-control" maxlength="80"/>
+            </td>
+        <tr>
+        <tr>
+            <td colspan="2">
+                <textarea rows="15" cols="10" id="contents" name="contents" class="form-control"></textarea>
+            </td>
+        </tr>
+        </thead>
+    </table>
+</form>
+    <button class="btn btn-default" id="listBtn">목록</button>
+    <button class="btn btn-primary" id="saveBtn">등록</button>
+
+    </div>
+</div>
+
+<footer class="d-flex justify-content-center navbar-fixed-bottom">
+    <span>copyright 2024 topolo All right reserved</span>
+</footer>
+
+</body>
+</html>
