@@ -1,7 +1,7 @@
 package io.goorm.mybatis.api.board.service;
 
 import io.goorm.mybatis.board.model.Board;
-import io.goorm.mybatis.restmybatis.mapper.BoardMapper;
+import io.goorm.mybatis.mapper.BoardMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

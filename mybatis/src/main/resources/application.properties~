@@ -1,9 +1,10 @@
 spring.application.name=mybatis
 
 #mapper.xml
+#classpath라고 하면 resources를 메인으로 잡는다.
 mybatis.mapper-locations= classpath:mappers/*.xml
 #MyBatis? CamelCase
-mybatis.configuration.map-uderscore-to-camel-case=true
+mybatis.configuration.map-underscore-to-camel-case=true
 
 #h2
 spring.sql.init.schema-locations=classpath:/db/h2/schema.sql
@@ -20,7 +21,16 @@ spring.datasource.password=
 logging.level.root=info
 logging.level.org.mybatis=debug
 
-logging.level.com.topolo.restmybatis.dynamic.mapper.DynamicMappers= debug
-logging.level.com.topolo.restmybatis.dynamic.controller.DynamicRestController= debug
-logging.level.com.topolo.restmybatis.dynamic.mapper= debug
+logging.level.io.goorm.mybatis.dynamic.mapper.DynamicMappers= debug
+logging.level.io.goorm.mybatis.dynamic.controller.DynamicRestController= debug
+logging.level.io.goorm.mybatis.dynamic.mapper= debug
 
+logging.file.name=logs/mybatis.log
+
+logging.logback.rollingpolicy.max-file-size=10MB
+
+logging.logback.rollingpolicy.max-history=10
+
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n
+
+logging.pattern.file=%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
