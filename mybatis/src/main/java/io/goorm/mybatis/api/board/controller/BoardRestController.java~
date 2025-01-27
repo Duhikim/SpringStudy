@@ -62,7 +62,7 @@ public class BoardRestController {
 
 	@DeleteMapping("/boards/{seq}")
 	public boolean delete(@PathVariable Long seq) {
-		log.debug("seq : " + seq );
+		log.debug("seq : " + seq());
 
 		return boardService.deleteBoard(seq);
 	}
